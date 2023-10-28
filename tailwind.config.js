@@ -4,15 +4,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        'background': '#141517',
-        'first': '#E83752',
-        'second': '#F2D058',
+        background: "#141517",
+        first: "#E83752",
+        second: "#F2D058",
+        thirt: "#181818",
       },
       fontFamily: {
         poppins: "",
         title: "",
       },
+      backgroundImage: {
+        "gradient-radial":
+          "linear-gradient(214deg, #F2D058 18.99%, #E83752 69.44%)"
+      },
     },
   },
   plugins: [],
-}
+};

@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    scroll-behavior: smooth;
-    color: white;
+html {
+  scroll-behavior: smooth;
+  color: white;
+}
+@layer components {
+  .top-left-blur {
+    @apply before:w-[50rem] before:h-[50rem] before:blur-[135px] before:opacity-50 before:bg-gradient-radial before:absolute before:top-0 before:left-0 before:block before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full;
+  }
+
+  .bottom-right-blur {
+    @apply after:w-[50rem] after:h-[50rem] after:blur-[135px] after:opacity-50 after:bg-gradient-radial after:absolute after:bottom-0 after:right-0 after:block after:translate-x-1/2 after:translate-y-1/2 after:rounded-full;
+  }
+}
+
+@layer components {
+    .icon-size{
+        @apply h-[26px] w-[26px]
+    }
 }
