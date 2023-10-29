@@ -12,7 +12,7 @@ export const App = () => {
       <div className="overflow-hidden texture">
         <div className="flex relative top-left-blur bottom-right-blur bg-background gap-14 w-full overflow-hidden h-screen pt-16 px-32">
           <Menu />
-          <div className="flex z-10">
+          <div className="flex z-10 flex-col">
             <Routes>
               <Route path="/" element={<HomeContent />} />
               <Route path="/about" element={<AboutContent />} />
