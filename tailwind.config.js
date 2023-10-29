@@ -14,8 +14,8 @@ export default {
         title: "",
       },
       backgroundImage: {
-        "gradient-radial":
-          "linear-gradient(214deg, #F2D058 18.99%, #E83752 69.44%)"
+        "gradient-radial": "linear-gradient(214deg, #F2D058 18.99%, #E83752 69.44%)",
+        "home-Img": "url('./src/assets/images/homeImg.png')",
       },
     },
   },
