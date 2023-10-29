@@ -1,34 +1,47 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/mini-logo.png";
-import Home from "../assets/images/home.png";
-import About from "../assets/images/sobre.png";
-import Projects from "../assets/images/projetos.png";
-import Contact from "../assets/images/contato.png";
+import Home from "../assets/static/home.json";
+import About from "../assets/static/about.json";
+import Projects from "../assets/static/project.json";
+import Contact from "../assets/static/contact.json";
 import { IMenuOptions } from "../interfaces/IMenuoptions";
+import { useRef } from "react";
+import { IconAnimation } from "./IconAnimation";
 
 export function Menu() {
+  const homeRef = useRef<any>();
+  const aboutRef = useRef<any>();
+  const projectsRef = useRef<any>();
+  const contactRef = useRef<any>();
+
   const menuOptions: IMenuOptions[] = [
     {
-      image: Home,
+      icon: Home,
       title: "Ínicio",
       href: "/",
+      iconRef: homeRef
     },
     {
-      image: About,
+      icon: About,
       title: "Sobre",
       href: "/about",
+      iconRef: aboutRef
     },
     {
-      image: Projects,
+      icon: Projects,
       title: "Projetos",
       href: "/projects",
+      iconRef: projectsRef
+      
     },
     {
-      image: Contact,
+      icon: Contact,
       title: "Contato",
       href: "/contact",
+      iconRef: contactRef
     },
   ];
+  
   return (
     <div className=" flex rounded-xl w-60 h-80 p-[1px] z-10 bg-gradient-to-b from-first to-first/0">
       <div className="flex flex-col w-60 h-80 rounded-xl py-7 gap-3 px-3 bg-thirt">
@@ -41,9 +54,9 @@ export function Menu() {
         </div>
         <div className="flex flex-col gap-2">
           {menuOptions.map((option) => (
-            <Link to={option.href} key={option.title}>
+            <Link to={option.href} key={option.title} onMouseEnter={() => option.iconRef.current?.play()} onMouseLeave={() => option.iconRef.current?.stop()}>
               <div className="flex gap-2 items-center rounded-md hover:bg-gradient-to-r hover:from-black/30 hover:to-black/5 w-full p-1 h-10">
-                <img className="icon-size" src={option.image} alt="" />
+                <IconAnimation data={option.icon} iconRef={option.iconRef}/>
                 <p className="text-lg">{option.title}</p>
               </div>
             </Link>

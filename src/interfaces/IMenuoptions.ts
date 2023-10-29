@@ -1,5 +1,8 @@
+import { MutableRefObject } from "react"
+
 export interface IMenuOptions {
-    image: string
+    icon: any
     title: string
     href: string
+    iconRef: MutableRefObject<any>
 }
