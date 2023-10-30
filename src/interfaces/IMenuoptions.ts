@@ -5,4 +5,5 @@ export interface IMenuOptions {
     title: string
     href: string
     iconRef: MutableRefObject<any>
+    speed: number
 }

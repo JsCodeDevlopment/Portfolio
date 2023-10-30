@@ -2,8 +2,15 @@ import { Button } from "./ui/Button"
 import Github from '../assets/images/guithub.png'
 import Linkedin from '../assets/images/linkedin.png'
 import Instagram from '../assets/images/instagram.png'
+import Arrow from '../assets/static/downArrow.json'
+import { IconAnimation } from "./IconAnimation";
+import { useRef } from "react"
+import { Link } from "react-router-dom"
+import { LottieRefCurrentProps } from 'lottie-react'
 
 export function HomeContent() {
+  const arrowRef = useRef<LottieRefCurrentProps>(null);
+
   return (
     <div className={`flex flex-col w-[703px] h-[538px] bg-home-Img bg-right gap-5 bg-contain bg-no-repeat`}>
       <div className="flex flex-col gap-7">
@@ -22,9 +29,9 @@ export function HomeContent() {
         <Button title="Github" logo={Github} bg="primary" size="medium" endereco="https://github.com/JsCodeDevlopment"/>
         <Button title="Instagram" logo={Instagram} bg="primary" size="medium" endereco="https://www.instagram.com/jonatasilva14/"/>
       </div>
-      <div className="">
+      <div className="flex flex-col items-center justify-center gap-2">
         <p className="text-xl">Te convido a <span className="text-first">conhecer</span> mais sobre mim e meu trabalho.</p>
-        <button>↓</button>
+        <Link to='/projects'><IconAnimation data={Arrow} iconRef={arrowRef} autoplay={true} loop={true} width={25} height={25} speed={0.4}/></Link>
       </div>
       </div>
     </div>

@@ -19,26 +19,30 @@ export function Menu() {
       icon: Home,
       title: "Ínicio",
       href: "/",
-      iconRef: homeRef
+      iconRef: homeRef,
+      speed: 1
     },
     {
       icon: About,
       title: "Sobre",
       href: "/about",
-      iconRef: aboutRef
+      iconRef: aboutRef,
+      speed: 1
     },
     {
       icon: Projects,
       title: "Projetos",
       href: "/projects",
-      iconRef: projectsRef
+      iconRef: projectsRef,
+      speed: 1
       
     },
     {
       icon: Contact,
       title: "Contato",
       href: "/contact",
-      iconRef: contactRef
+      iconRef: contactRef,
+      speed: 1
     },
   ];
   
@@ -56,7 +60,7 @@ export function Menu() {
           {menuOptions.map((option) => (
             <Link to={option.href} key={option.title} onMouseEnter={() => option.iconRef.current?.play()} onMouseLeave={() => option.iconRef.current?.stop()}>
               <div className="flex gap-2 items-center rounded-md hover:bg-gradient-to-r hover:from-black/30 hover:to-black/5 w-full p-1 h-10">
-                <IconAnimation data={option.icon} iconRef={option.iconRef}/>
+                <IconAnimation data={option.icon} iconRef={option.iconRef} speed={option.speed}/>
                 <p className="text-lg">{option.title}</p>
               </div>
             </Link>

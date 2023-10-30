@@ -1,8 +1,20 @@
-import Lottie from "lottie-react"
-import { IIconAnimationProps } from "../interfaces/IIconProps"
+import Lottie from "lottie-react";
+import { IIconAnimationProps } from "../interfaces/IIconProps";
+import { useEffect } from "react";
 
-export const IconAnimation = ({ iconRef, data }: IIconAnimationProps) => {
-    return (
-    <Lottie lottieRef={iconRef} animationData={data} style={{ width: 24, height: 24 }} autoplay={false} loop={false}/>
-  )
-}
+export const IconAnimation = ({ iconRef, data, autoplay, loop, width = 24, height = 24, speed = 1 }: IIconAnimationProps) => {
+ 
+  useEffect(() => {
+    iconRef.current?.setSpeed(speed)
+  }, [])
+  
+  return (
+    <Lottie
+      lottieRef={iconRef}
+      animationData={data}
+      style={{ width, height }}
+      autoplay={!autoplay ? false : autoplay}
+      loop={!loop ? false : loop}
+    />
+  );
+};
