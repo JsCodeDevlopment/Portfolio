@@ -15,10 +15,14 @@ export function Footer() {
     />
   );
   return (
-    <div className="flex bg-black h-9 items-center gap-1 justify-center">
-      <h1 className="text-sm">Feito com</h1>
-      <h1 className="text-sm">{heartIcon()}</h1>
-      <h1 className="text-sm">por Jonatas Silva - © Todos os direitos reservados. 2023-{currentYear}</h1>
-    </div>
+    <footer className="shadow bg-black">
+      <div className="w-full mx-auto gap-1 max-w-screen-xl p-4 md:flex md:items-center md:justify-center">
+        <h1 className="text-sm max-sm:text-xs">Feito com</h1>
+        <h1 className="text-sm max-sm:text-xs">{heartIcon()}</h1>
+        <h1 className="text-sm max-sm:text-xs">
+          por Jonatas Silva - © Todos os direitos reservados. 2023-{currentYear}
+        </h1>
+      </div>
+    </footer>
   );
 }

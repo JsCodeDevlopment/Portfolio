@@ -8,4 +8,5 @@ export interface IIconAnimationProps {
     width?: number
     height?: number
     speed?: number
+    className?: string
 }
