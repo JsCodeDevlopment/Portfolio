@@ -1,7 +1,7 @@
 export function ContactContent() {
-    return (
-        <div>
-        <h1>ISSO É O CONTEÚDO PARA ENTRAR EM CONTATO</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>A mano essa pagina de contato ainda está em construção 🐱‍👤</h1>
+    </div>
+  );
 }
