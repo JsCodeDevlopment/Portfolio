@@ -5,14 +5,11 @@ import { AboutContent } from "./components/AboutContent";
 import { ProjectsContent } from "./components/ProjectsContent";
 import { ContactContent } from "./components/ContactContent";
 import { HomeContent } from "./components/HomeContent";
-import { Header } from "./components/Header";
 
 export const App = () => {
   return (
     <BrowserRouter>
-      <div className="flex flex-col relative bg-background top-left-blur bottom-right-blur overflow-hidden w-full h-full">
-          <Header />
-        <div className="flex p-10 justify-around">
+        <div className="flex relative top-left-blur bottom-right-blur bg-background gap-14 w-full overflow-hidden pt-16 px-32 max-lg:p-2 max-lg:pt-10 max-lg:flex-wrap-reverse max-lg:items-center max-lg:justify-center max-md:flex-wrap-reverse max-md:items-center max-md:justify-center max-md:px-1 max-md:pb-5">
           <Menu />
           <div className="flex z-10 flex-col w-2/3 max-md:w-11/12 max-md:justify-center max-md:items-center">
             <Routes>
@@ -24,7 +21,6 @@ export const App = () => {
           </div>
         </div>
         <Footer />
-      </div>
     </BrowserRouter>
   );
 };

@@ -1,25 +1,28 @@
+import Logo from "../assets/images/mini-logo.png";
+import HbgBtn from "../assets/images/menu.png";
+import CloseBtn from "../assets/images/close-menu.png";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export function Header() {
+  const [menuVisible, setMenuVisible] = useState(false);
+
   return (
-    <div className="navbar absolute bg-black top-1 w-full z-50">
-      <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <div className="hidden fixed items-center justify-between px-10 py-2 bg-gradient-to-b from-background to-black/60 shadow-md w-full z-50 max-lg:flex max-md:px-2">
+      <div className="flex items-center gap-2">
+        <Link to="/">
+          <img
+            className="w-[44px] h-[44px] rounded-md max-md:w-7 max-md:h-7"
+            src={Logo}
+            alt="" />
+        </Link>
       </div>
-      <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            className="inline-block w-5 h-5 stroke-current"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-            ></path>
-          </svg>
-        </button>
+      <div className="flex">
+        <img
+          className="w-[44px] h-[44px] max-md:w-7 max-md:h-7"
+          src={menuVisible ? CloseBtn : HbgBtn}
+          alt=""
+          onClick={() => setMenuVisible(!menuVisible)} />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export function Footer() {
     />
   );
   return (
-    <footer className="shadow bg-black">
+    <footer className="shadow bg-black z-10">
       <div className="w-full mx-auto gap-1 max-w-screen-xl p-4 md:flex md:items-center md:justify-center">
         <h1 className="text-sm max-sm:text-xs">Feito com</h1>
         <h1 className="text-sm max-sm:text-xs">{heartIcon()}</h1>
