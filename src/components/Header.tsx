@@ -3,6 +3,7 @@ import HbgBtn from "../assets/images/menu.png";
 import CloseBtn from "../assets/images/close-menu.png";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ResponsiveMenu } from "./ResponsiveMenu";
 
 export function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -24,6 +25,7 @@ export function Header() {
           alt=""
           onClick={() => setMenuVisible(!menuVisible)} />
       </div>
+      {menuVisible ? <ResponsiveMenu/> : <></>}
     </div>
   );
 }
