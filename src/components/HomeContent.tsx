@@ -45,9 +45,9 @@ export function HomeContent() {
           endereco="https://www.instagram.com/jonatasilva14/" />
       </div>
       <div className="flex -mt-64 ml-44 -z-10 max-lg:z-0 max-lg:m-0">
-        <img src={Me} alt="" />
+        <img className="shadow-first" src={Me} alt="" />
       </div>
-      <div className="flex flex-col items-center justify-center p-5 max-lg:mb-36">
+      <div className="flex flex-col items-center justify-center p-5">
         <p className="text-xl">
           Te convido a <span className="text-first">conhecer</span> mais sobre
           mim e meu trabalho.

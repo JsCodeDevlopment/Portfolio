@@ -8,7 +8,7 @@ export function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
 
   return (
-    <div className="hidden fixed items-center justify-between px-10 py-2 bg-gradient-to-b from-background to-black/60 shadow-md w-full z-50 max-lg:flex max-md:px-2">
+    <div className="hidden fixed items-center justify-between px-10 py-2 bg-gradient-to-b from-background to-black/60 shadow-md w-full z-50 max-lg:flex max-md:px-6">
       <div className="flex items-center gap-2">
         <Link to="/">
           <img
