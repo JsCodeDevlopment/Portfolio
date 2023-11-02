@@ -19,7 +19,7 @@ export function HomeContent() {
         <p className="text-base">Ceará - Brasil</p>
       </div>
       <div className="flex w-96 max-lg:w-full">
-        <p className="text-xl ">
+        <p className="text-xl">
           {`Aprender, desenvolver e transmitir. Essa é a
         essência da minha jornada como desenvolvedor Fullstack.`}
         </p>

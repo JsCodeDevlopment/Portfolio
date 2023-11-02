@@ -15,7 +15,7 @@ const buttonVariants = tv({
     size: {
       small: "w-24 h-7",
       medium: "w-[114px] h-[31px]",
-      large: "w-[114px] h-[31px]",
+      large: "w-[160px] h-[33px]",
     },
   },
   defaultVariants: {
@@ -24,17 +24,30 @@ const buttonVariants = tv({
   },
 });
 
-interface IButtonProps extends VariantProps<typeof buttonVariants> {
+const iconVariants = tv({
+  base: ["w-5 h-5"],
+  variants: {
+    logoSize: {
+      small: "w-3 h-3",
+      medium: "w-5 h-5",
+      large: "w-7 h-7"
+    }
+  }
+})
+
+interface IIconVariants extends VariantProps<typeof iconVariants> {}
+
+interface IButtonProps extends VariantProps<typeof buttonVariants>, IIconVariants {
   title: string;
   logo: string;
   endereco?: string
 }
 
-export function Button({ title, logo, bg, size, endereco }: IButtonProps) {
+export function Button({ title, logo, bg, size, endereco, logoSize }: IButtonProps) {
   return (
     <a href={endereco} target="_blank">
-      <button type="button" className={buttonVariants({ bg, size, })}>
-        <img src={logo} alt="" />
+      <button type="button" className={buttonVariants({ bg, size })}>
+        <img className={iconVariants({ logoSize })} src={logo} alt="" />
         {title}
       </button>
     </a>
