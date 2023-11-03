@@ -12,7 +12,7 @@ export const App = () => {
     <BrowserRouter>
       <div className="flex flex-col relative bg-background top-left-blur bottom-right-blur overflow-hidden w-full h-full">
           <Header />
-        <div className="flex p-10 justify-around max-lg:pt-20 max-md:pt-14">
+        <div className="flex p-10 justify-around max-lg:pt-20 max-md:pt-14 max-sm:px-5">
           <Menu />
           <div className="flex z-10 flex-col w-2/3 max-md:justify-center max-md:items-center max-md:w-full">
             <Routes>
