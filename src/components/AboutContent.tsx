@@ -8,7 +8,7 @@ import { NavgationBtn } from "./ui/NavgationBtn";
 export function AboutContent() {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex flex-wrap gap-5 max-lg:justify-center">
+      <div className="flex flex-wrap gap-5 max-lg:justify-center max-xl:justify-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl text-first">Sobre Mim</h1>
           <div className="flex flex-col gap-2 max-w-md">
@@ -35,7 +35,7 @@ export function AboutContent() {
           <img className="w-full object-cover rounded-lg" src={Me} alt="" />
         </div>
       </div>
-      <div className="flex max-lg:justify-center">
+      <div className="flex max-lg:justify-center max-xl:justify-center">
         <Button title="Download C.V" logo={Download} size="large" endereco="" />
       </div>
       <div className="flex flex-col items-center gap-5">
