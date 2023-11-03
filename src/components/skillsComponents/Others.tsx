@@ -1,12 +1,14 @@
+import { useOtherStacks } from "../data/MockOtherStacks";
 import { Button } from "../ui/Button";
-import React from "../../assets/images/react.svg";
-import Typescript from "../../assets/images/typescript.svg";
 
 export function OthersStacks() {
+  const { frontStacks } = useOtherStacks()
+  
   return (
     <div className="flex flex-wrap items-center justify-center">
-      <Button title="React" logo={React} size="medium" logoSize="medium" />
-      <Button title="Typescript" logo={Typescript} size="medium" logoSize="medium" />
+      {frontStacks.map((stack)=>(
+        <Button key={stack.title} title={stack.title} logo={stack.logo} size="xl" logoSize="medium" />
+        ))}
     </div>
   );
 }
