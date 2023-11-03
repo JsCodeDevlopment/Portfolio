@@ -1,8 +1,4 @@
-
-interface AboutPageProps {
-  selectedOption: string;
-  onOptionClick: (option: string) => void;
-}
+import { AboutPageProps } from "../../interfaces/IAboutPageProp";
 
 export function NavgationBtn({ selectedOption, onOptionClick }: AboutPageProps) {
   return (

@@ -2,18 +2,18 @@ import { useState } from "react";
 import Me from "../assets/images/aboutImg.png";
 import Download from "../assets/images/download.png";
 import { FrontStacks } from "./skillsComponents/Front";
-
 import { Button } from "./ui/Button";
 import { NavgationBtn } from "./ui/NavgationBtn";
 import { BackStacks } from "./skillsComponents/Back";
 import { OthersStacks } from "./skillsComponents/Others";
 
 export function AboutContent() {
-  const [selectedOption, setSelectedOption] = useState('front');
+  const [selectedOption, setSelectedOption] = useState('back');
 
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };
+  
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-5 max-lg:justify-center max-xl:justify-center">
