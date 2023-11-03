@@ -19,8 +19,9 @@ const buttonVariants = tv({
       xl: "w-[160px] h-[40px]",
     },
     focus: {
-      activeFocus: "focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 dark:focus:ring-gray-500"
-    }
+      activeFocus:
+        "focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 dark:focus:ring-gray-500",
+    },
   },
   defaultVariants: {
     bg: "primary",
@@ -34,17 +35,17 @@ const iconVariants = tv({
     logoSize: {
       small: "w-3 h-3",
       medium: "w-5 h-5",
-      large: "w-7 h-7"
-    }
-  }
-})
+      large: "w-7 h-7",
+    },
+  },
+});
 
-interface IIconVariants extends VariantProps<typeof iconVariants> {}
-
-interface IButtonProps extends VariantProps<typeof buttonVariants>, IIconVariants {
+interface IButtonProps
+  extends VariantProps<typeof buttonVariants>,
+  VariantProps<typeof iconVariants> {
   title: string;
   logo: string;
-  endereco?: string
+  endereco?: string;
 }
 
 export function Button({ title, logo, bg, size, endereco, logoSize }: IButtonProps) {

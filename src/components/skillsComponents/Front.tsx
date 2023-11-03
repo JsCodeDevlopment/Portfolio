@@ -1,5 +1,5 @@
 import { Button } from "../ui/Button";
-import { useFrontStacks } from "../moc/MocFrontStacks";
+import { useFrontStacks } from "../data/MockFrontStacks";
 
 export function FrontStacks() {
   const { frontStacks } = useFrontStacks()

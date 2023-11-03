@@ -1,11 +1,19 @@
+import { useState } from "react";
 import Me from "../assets/images/aboutImg.png";
 import Download from "../assets/images/download.png";
 import { FrontStacks } from "./skillsComponents/Front";
 
 import { Button } from "./ui/Button";
 import { NavgationBtn } from "./ui/NavgationBtn";
+import { BackStacks } from "./skillsComponents/Back";
+import { OthersStacks } from "./skillsComponents/Others";
 
 export function AboutContent() {
+  const [selectedOption, setSelectedOption] = useState('front');
+
+  const handleOptionClick = (option: string) => {
+    setSelectedOption(option);
+  };
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap gap-5 max-lg:justify-center max-xl:justify-center">
@@ -40,9 +48,9 @@ export function AboutContent() {
       </div>
       <div className="flex flex-col items-center gap-5">
         <h1 className="text-3xl">Habilidades</h1>
-        <div className="flex flex-col gap-2">
-          <NavgationBtn />
-          <FrontStacks/>
+        <div className="flex flex-col gap-2 h-48 max-lg:h-64 max-lg:mb-3 max-md:h-[500px]">
+          <NavgationBtn selectedOption={selectedOption} onOptionClick={handleOptionClick} />
+          {selectedOption === 'front' ? <FrontStacks/> : selectedOption === 'back' ? <BackStacks/> : <OthersStacks/>}
         </div>
       </div>
     </div>

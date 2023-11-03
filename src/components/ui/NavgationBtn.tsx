@@ -1,4 +1,10 @@
-export function NavgationBtn() {
+
+interface AboutPageProps {
+  selectedOption: string;
+  onOptionClick: (option: string) => void;
+}
+
+export function NavgationBtn({ selectedOption, onOptionClick }: AboutPageProps) {
   return (
     <div className="z-50 w-full">
       <div className="w-full">
@@ -7,17 +13,23 @@ export function NavgationBtn() {
           role="group" >
           <button
             type="button"
-            className="px-5 py-1.5 text-xs font-medium rounded-lg bg-white text-black" >
+            name="front"
+            onClick={() => onOptionClick('front')}
+            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'front' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Front-end
           </button>
           <button
             type="button"
-            className="px-5 py-1.5 text-xs font-medium rounded-lg hover:bg-background" >
+            name="back"
+            onClick={() => onOptionClick('back')}
+            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'back' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Back-end
           </button>
           <button
             type="button"
-            className="px-5 py-1.5 text-xs font-medium rounded-lg hover:bg-background" >
+            name="other"
+            onClick={() => onOptionClick('other')}
+            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'other' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Outros
           </button>
         </div>

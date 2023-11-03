@@ -4,12 +4,13 @@ import Projects from "../../assets/static/project.json";
 import Contact from "../../assets/static/contact.json";
 import { IMenuOptions } from "../../interfaces/IMenuoptions";
 import { useRef } from "react";
+import { LottieRefCurrentProps } from "lottie-react";
 
 export function useMenuOptions() {
-  const homeRef = useRef<any>();
-  const aboutRef = useRef<any>();
-  const projectsRef = useRef<any>();
-  const contactRef = useRef<any>();
+  const homeRef = useRef<LottieRefCurrentProps>(null);
+  const aboutRef = useRef<LottieRefCurrentProps>(null);
+  const projectsRef = useRef<LottieRefCurrentProps>(null);
+  const contactRef = useRef<LottieRefCurrentProps>(null);
 
   const menuOptions: IMenuOptions[] = [
     {

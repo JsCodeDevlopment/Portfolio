@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useMenuOptions } from "./moc/MocMenu";
+import { useMenuOptions } from "./data/MockMenu";
 import { IconAnimation } from "./IconAnimation";
 
 export function ResponsiveMenu() {

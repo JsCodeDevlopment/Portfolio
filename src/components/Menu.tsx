@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../assets/images/mini-logo.png";
 import { IconAnimation } from "./IconAnimation";
-import { useMenuOptions } from "./moc/MocMenu";
+import { useMenuOptions } from "./data/MockMenu";
 
 export function Menu() {
 
