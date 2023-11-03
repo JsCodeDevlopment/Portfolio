@@ -30,19 +30,22 @@ export function HomeContent() {
           logo={Linkedin}
           bg="primary"
           size="medium"
-          endereco="https://www.linkedin.com/in/jscodedevelopment/" />
+          endereco="https://www.linkedin.com/in/jscodedevelopment/"
+          focus="activeFocus" />
         <Button
           title="Github"
           logo={Github}
           bg="primary"
           size="medium"
-          endereco="https://github.com/JsCodeDevlopment" />
+          endereco="https://github.com/JsCodeDevlopment"
+          focus="activeFocus" />
         <Button
           title="Instagram"
           logo={Instagram}
           bg="primary"
           size="medium"
-          endereco="https://www.instagram.com/jonatasilva14/" />
+          endereco="https://www.instagram.com/jonatasilva14/"
+          focus="activeFocus" />
       </div>
       <div className="flex -mt-64 ml-44 -z-10 max-lg:z-0 max-lg:m-0">
         <img src={Me} alt="" />

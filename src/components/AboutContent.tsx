@@ -1,7 +1,7 @@
 import Me from "../assets/images/aboutImg.png";
 import Download from "../assets/images/download.png";
-import React from "../assets/images/react.svg";
-import Typescript from "../assets/images/typescript.svg";
+import { FrontStacks } from "./skillsComponents/Front";
+
 import { Button } from "./ui/Button";
 import { NavgationBtn } from "./ui/NavgationBtn";
 
@@ -42,14 +42,7 @@ export function AboutContent() {
         <h1 className="text-3xl">Habilidades</h1>
         <div className="flex flex-col gap-2">
           <NavgationBtn />
-          <div className="flex flex-wrap items-center justify-center">
-            <Button title="React" logo={React} size="medium" logoSize="medium" />
-            <Button title="Typescript" logo={Typescript} size="medium" logoSize="medium" />
-            <Button title="React" logo={React} size="medium" logoSize="medium" />
-            <Button title="React" logo={React} size="medium" logoSize="medium" />
-            <Button title="React" logo={React} size="medium" logoSize="medium" />
-            <Button title="React" logo={React} size="medium" logoSize="medium" />
-          </div>
+          <FrontStacks/>
         </div>
       </div>
     </div>

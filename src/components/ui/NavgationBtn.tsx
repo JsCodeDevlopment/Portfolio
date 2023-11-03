@@ -7,12 +7,12 @@ export function NavgationBtn() {
           role="group" >
           <button
             type="button"
-            className="px-5 py-1.5 text-xs font-medium rounded-lg hover:bg-background" >
+            className="px-5 py-1.5 text-xs font-medium rounded-lg bg-white text-black" >
             Front-end
           </button>
           <button
             type="button"
-            className="px-5 py-1.5 text-xs font-medium rounded-lg bg-white text-black" >
+            className="px-5 py-1.5 text-xs font-medium rounded-lg hover:bg-background" >
             Back-end
           </button>
           <button
