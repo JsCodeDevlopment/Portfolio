@@ -15,7 +15,7 @@ export function AboutContent() {
   };
   
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-7">
       <div className="flex flex-wrap gap-5 max-lg:justify-center max-xl:justify-center">
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl text-first">Sobre Mim</h1>
@@ -47,7 +47,7 @@ export function AboutContent() {
         <Button title="Download C.V" logo={Download} size="large" endereco="" />
       </div>
       <div className="flex flex-col items-center gap-5">
-        <h1 className="text-3xl">Habilidades</h1>
+        <h1 className="text-3xl text-first">Habilidades</h1>
         <div className="flex flex-col gap-2 h-48 max-lg:h-64 max-lg:mb-3 max-md:h-[500px]">
           <NavgationBtn selectedOption={selectedOption} onOptionClick={handleOptionClick} />
           {selectedOption === 'front' ? <FrontStacks/> : selectedOption === 'back' ? <BackStacks/> : <OthersStacks/>}

@@ -12,13 +12,13 @@ export function ContactForm() {
         id="email"
         placeholder="jhondoe@email.com"
         className="input input-bordered w-full"
-        type="email" />
+        type="email" required/>
       <label htmlFor="message">Mensagem</label>
       <textarea
         id="message"
         placeholder="Vamos trocar ideias?"
         className="textarea textarea-bordered w-full"
-        name="message"></textarea>
+        name="message" required></textarea>
       <button
         className="bg-gradient-to-r from-first to-second text-white font-bold py-2 px-4 rounded-md hover:bg-background"
         type="submit">Enviar</button>

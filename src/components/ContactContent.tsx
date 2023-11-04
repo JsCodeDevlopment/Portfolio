@@ -25,24 +25,21 @@ export function ContactContent() {
               bg="primary"
               size="medium"
               endereco="https://www.linkedin.com/in/jscodedevelopment/"
-              focus="activeFocus"
-            />
+              focus="activeFocus" />
             <Button
               title="Github"
               logo={Github}
               bg="primary"
               size="medium"
               endereco="https://github.com/JsCodeDevlopment"
-              focus="activeFocus"
-            />
+              focus="activeFocus" />
             <Button
               title="Instagram"
               logo={Instagram}
               bg="primary"
               size="medium"
               endereco="https://www.instagram.com/jonatasilva14/"
-              focus="activeFocus"
-            />
+              focus="activeFocus" />
           </div>
         </div>
       </div>
