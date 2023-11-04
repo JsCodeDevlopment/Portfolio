@@ -6,7 +6,7 @@ export function ResponsiveMenu() {
   const { menuOptions } = useMenuOptions();
 
   return (
-    <div className="inline-flex flex-col items-center absolute bg-gradient-to-b from-black/90 to-black/40 rounded-sm shadow-md top-[4.3rem] right-2 max-md:top-[3rem]">
+    <div className="inline-flex flex-col items-center absolute bg-gradient-to-b from-black/90 to-black/40 rounded-sm shadow-md top-[4.3rem] right-2 max-md:top-[3rem] transition ease-in-out duration-150">
       <ul className="flex p-2 flex-col gap-1 items-start w-48 h-70">
         <li className="flex gap-2 py-1 px-2 w-full text-white font-semibold border-b border-white/20">
           Menu
