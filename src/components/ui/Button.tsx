@@ -11,12 +11,16 @@ const buttonVariants = tv({
     bg: {
       primary: "bg-[#24292F]",
       secondary: "bg-[#E83752]",
+      tertiary: "bg-[#ffff]",
     },
     size: {
       small: "w-24 h-7",
       medium: "w-[114px] h-[31px]",
       large: "w-[160px] h-[33px]",
       xl: "w-[160px] h-[40px]",
+      noTitleSmall: "w-12 h-7 p-1",
+      noTitleMedium: "w-14 h-7 p-1",
+      noTitleLarge: "w-16 h-7 p-1",
     },
     focus: {
       activeFocus:

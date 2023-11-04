@@ -16,7 +16,10 @@ export function ProjectsContent() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-5">
-        <div className="flex gap-10 w-full flex-wrap justify-center">
+        <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
+          <ProjectCard/>
+          <ProjectCard/>
+          <ProjectCard/>
           <ProjectCard/>
         </div>
       </div>
