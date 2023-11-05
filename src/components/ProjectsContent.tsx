@@ -2,7 +2,7 @@ import { useProjectsRequest } from "../servises/API/ProjectsRequest";
 import { ProjectCard } from "./ui/ProjectCard";
 
 export function ProjectsContent() {
-  const { repos } = useProjectsRequest()
+  const { repos } = useProjectsRequest();
 
   return (
     <div className="flex flex-col gap-12">
@@ -11,7 +11,9 @@ export function ProjectsContent() {
           <h1 className="text-3xl text-first">Meus Projetos</h1>
           <div className="flex flex-col gap-2">
             <p className="text-xl">
-              {`Minha jornada de aprendizado abrange uma variedade de projetos web. Nesta página, você encontrará alguns projetos que 
+              {`Minha jornada de aprendizado abrange uma variedade de projetos web. Nesta página, você encontrará ${
+                repos ? repos.filter((repo)=>repo.topics.includes('pinned')).length : "alguns"
+              } projetos favoritos que 
             representam meu progresso e dedicação à arte da programação web.`}
             </p>
           </div>
@@ -19,13 +21,43 @@ export function ProjectsContent() {
       </div>
       <div className="flex flex-col items-center gap-5">
         <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
-          {repos.length > 0 ? (
-            repos.map((repo) => <ProjectCard key={repo.id} />)
+          {repos ? (
+            repos
+              .filter((repo) => repo.topics.includes("pinned"))
+              .map((repo) => (
+                <ProjectCard
+                  key={repo.id}
+                  name={repo.name}
+                  description={repo.description}
+                  homepage={repo.homepage}
+                  html_url={repo.html_url}
+                />
+              ))
           ) : (
-            <p>Ainda não há repos para exibir.</p>
+            <p className="text-base">
+              Desculpe-me mas por algum motivo os projetos não poderam ser
+              carregados! 🤦‍♂️😢
+            </p>
           )}
         </div>
       </div>
     </div>
   );
 }
+
+// {repos.length > 0 ? (
+//   repos.map((repo) => (
+//     <ProjectCard
+//       key={repo.id}
+//       name={repo.name}
+//       description={repo.description}
+//       homepage={repo.homepage}
+//       html_url={repo.html_url}
+//     />
+//   ))
+// ) : (
+//   <p className="text-base">
+//     Desculpe-me mas por algum motivo os projetos não poderam ser
+//     carregados! 🤦‍♂️😢
+//   </p>
+// )}
