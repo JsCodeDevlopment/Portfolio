@@ -5,6 +5,7 @@ import Linkedin from "../assets/images/linkedin.png";
 import Instagram from "../assets/images/instagram.png";
 
 export function ContactContent() {
+
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-wrap gap-5 max-lg:justify-center max-xl:justify-center">
@@ -44,9 +45,7 @@ export function ContactContent() {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-semibold text-first">
-          Que tal mandar um email?
-        </h1>
+        <h1 className="text-3xl text-first">Que tal mandar um email?</h1>
         <h1 className="text-xl">
           Estou ansioso para ouvir de você. Deixe-me uma mensagem.
         </h1>
