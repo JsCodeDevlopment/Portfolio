@@ -1,9 +1,14 @@
 import { ProjectCard } from "./ui/ProjectCard";
 import { Projects } from "../servises/API/ProjectsRequest";
+import { useEffect } from "react";
 
 export async function ProjectsContent() {
+
+  useEffect(() => {
+    const repos = Projects.getAllRepo()
+    return repos
+  }, [])
   
-  const repos = await Projects.getAllRepo()
 
   return (
     <div className="flex flex-col gap-12">
