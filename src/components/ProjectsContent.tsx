@@ -1,14 +1,22 @@
 import { ProjectCard } from "./ui/ProjectCard";
 import { Projects } from "../servises/API/ProjectsRequest";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { IRepos } from "../interfaces/IRepos";
 
 export async function ProjectsContent() {
+  const [repos, setRepos] = useState<IRepos[] | undefined>([]);
 
   useEffect(() => {
-    const repos = Projects.getAllRepo()
-    return repos
-  }, [])
-  
+    Projects.repos()
+      .then((data) => {
+        setRepos(data);
+      })
+      .catch((err) => {
+        console.error(err, "deu erro parça");
+      });
+  }, []);
+
+  console.log(repos)
 
   return (
     <div className="flex flex-col gap-12">
@@ -17,7 +25,9 @@ export async function ProjectsContent() {
           <h1 className="text-3xl text-first">Meus Projetos</h1>
           <div className="flex flex-col gap-2">
             <p className="text-xl">
-              {`Minha jornada de aprendizado abrange uma variedade de projetos web. Nesta página, você encontrará um total de ${repos?.length} projetos que 
+              {`Minha jornada de aprendizado abrange uma variedade de projetos web. Nesta página, você encontrará ${
+                repos ? repos.length : "alguns"
+              } projetos que 
             representam meu progresso e dedicação à arte da programação web.`}
             </p>
           </div>
@@ -25,9 +35,17 @@ export async function ProjectsContent() {
       </div>
       <div className="flex flex-col items-center gap-5">
         <div className="grid grid-cols-2 gap-5 max-lg:grid-cols-1">
-          {repos ? ( <ProjectCard /> ) : (<span> Infelizmente não foi possivel achar nenhum projeto 🤦‍♂️</span>)}
+          projetos aqui
         </div>
       </div>
     </div>
   );
 }
+
+// {repos ? (
+//   repos.map((repo)=>(
+//     <ProjectCard key={repo.id} />
+//   ))
+// ) : (
+//   <span> Infelizmente não foi possivel achar nenhum projeto 🤦‍♂️</span>
+// )}

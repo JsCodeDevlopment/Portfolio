@@ -1,12 +1,13 @@
 import { IRepos } from "../../interfaces/IRepos";
 import { baseURL } from "../baseURL";
+import axios from "axios";
 
 export class Projects {
-  static getAllRepo = async () => {
+  static repos = async (): Promise<IRepos[] | undefined> => {
     try {
-      const resp: IRepos[] = await fetch(`${baseURL}/repos`).then((resp) => resp.json());
-      console.log(resp)
-      return resp;
+      const resp = await axios.get(`${baseURL}/repos`)
+      console.log(resp);
+      return resp.data;
     } catch (err) {
       console.error(err, "Algo deu errado em sua busca mano.");
     }
