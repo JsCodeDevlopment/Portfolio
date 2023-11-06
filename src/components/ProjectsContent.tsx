@@ -27,10 +27,7 @@ export function ProjectsContent() {
               .map((repo) => (
                 <ProjectCard
                   key={repo.id}
-                  name={repo.name}
-                  description={repo.description}
-                  homepage={repo.homepage}
-                  html_url={repo.html_url}
+                  repo={repo}
                 />
               ))
           ) : (

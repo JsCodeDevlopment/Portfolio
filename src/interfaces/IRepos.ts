@@ -5,6 +5,6 @@ export interface IRepos {
   description: string | null;
   homepage: string | undefined;
   topics: any[];
-  pushed_at: Date
+  created_at: Date
   message?: "Not Found";
 }

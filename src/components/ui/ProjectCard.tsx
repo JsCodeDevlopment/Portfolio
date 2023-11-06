@@ -6,17 +6,40 @@ import github from "../../assets/images/github-icon.svg";
 import link from "../../assets/images/visitar.svg";
 import { Button } from "./Button";
 import { IRepos } from "../../interfaces/IRepos";
+import { utcToZonedTime } from "date-fns-tz";
+import { differenceInDays, parseISO } from "date-fns";
 
-export function ProjectCard({ name, html_url, description, homepage }: IRepos) {
+export function ProjectCard({ repo: {name, html_url, description, homepage, created_at} }: {repo: IRepos}) {
+  
+  const setShowTag = () => {
+    const timeZone = "America/Sao_Paulo";
+    const dataRecebidaParsed = utcToZonedTime(parseISO(created_at.toString()), timeZone);
+    const dataAtual = new Date();
+    const diferencaEmDias = differenceInDays(dataRecebidaParsed, dataAtual);
+
+    let displayStyle;
+
+    if (diferencaEmDias > -30) {
+      displayStyle = "inline-flex";
+    } else {
+      displayStyle = "hidden";
+    }
+    return displayStyle;
+  };
+  setShowTag();
+
   return (
     <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img src={`${homepage}/preview.webp`} alt="" />
       </figure>
       <div className="card-body gap-5">
         <h2 className="card-title font-title font-normal">
-          {name}
-          <div className="badge badge-sm badge-error text-white">NEW</div>
+          {name.replace(/-/g, " ")}
+          <div
+            className={`${setShowTag()} badge badge-sm badge-error text-white`} >
+            NEW
+          </div>
         </h2>
         <p className="font-extralight text-sm max-md:text-xs break-words">
           {description}
