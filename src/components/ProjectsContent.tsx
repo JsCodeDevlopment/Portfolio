@@ -12,7 +12,10 @@ export function ProjectsContent() {
           <div className="flex flex-col gap-2">
             <p className="text-xl font-poppins">
               {`Minha jornada de aprendizado abrange uma variedade de projetos web. Nesta página, você encontrará ${
-                repos ? repos.filter((repo)=>repo.topics.includes('pinned')).length : "alguns"
+                repos
+                  ? repos.filter((repo) => repo.topics.includes("pinned"))
+                      .length
+                  : "alguns"
               } projetos favoritos que 
             representam meu progresso e dedicação à arte da programação web.`}
             </p>
@@ -24,15 +27,11 @@ export function ProjectsContent() {
           {repos ? (
             repos
               .filter((repo) => repo.topics.includes("pinned"))
-              .map((repo) => (
-                <ProjectCard
-                  key={repo.id}
-                  repo={repo}
-                />
-              ))
+              .sort((a, b) => +new Date(b.created_at) - +new Date(a.created_at))
+              .map((repo) => <ProjectCard key={repo.id} repo={repo} />)
           ) : (
             <p className="text-base">
-              Desculpe-me mas por algum motivo os projetos não poderam ser
+              Desculpe-me, mas por algum motivo os projetos não puderam ser
               carregados! 🤦‍♂️😢
             </p>
           )}

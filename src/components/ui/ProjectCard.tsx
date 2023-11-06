@@ -7,12 +7,19 @@ import { Button } from "./Button";
 import { IRepos } from "../../interfaces/IRepos";
 import { utcToZonedTime } from "date-fns-tz";
 import { differenceInDays, parseISO } from "date-fns";
+import { useEffect } from "react";
 
-export function ProjectCard({ repo: {name, html_url, description, homepage, created_at} }: {repo: IRepos}) {
-  
+export function ProjectCard({
+  repo: { name, html_url, description, homepage, created_at },
+}: {
+  repo: IRepos;
+}) {
   const setShowTag = () => {
     const timeZone = "America/Sao_Paulo";
-    const dataRecebidaParsed = utcToZonedTime(parseISO(created_at.toString()), timeZone);
+    const dataRecebidaParsed = utcToZonedTime(
+      parseISO(created_at.toString()),
+      timeZone
+    );
     const dataAtual = new Date();
     const diferencaEmDias = differenceInDays(dataRecebidaParsed, dataAtual);
 
@@ -25,18 +32,24 @@ export function ProjectCard({ repo: {name, html_url, description, homepage, crea
     }
     return displayStyle;
   };
-  setShowTag();
+
+  useEffect(() => {
+    setShowTag();
+  }, [])
+  
 
   return (
     <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5">
-      <figure>
-        <img src={`${homepage}/preview.webp`} alt="" />
-      </figure>
+      {homepage && (
+        <figure>
+          <img className="" src={`${homepage}/preview.webp`} alt="" />
+        </figure>
+      )}
       <div className="card-body gap-5">
         <h2 className="card-title font-title font-normal">
           {name.replace(/-/g, " ")}
           <div
-            className={`${setShowTag()} badge badge-sm badge-error text-white`} >
+            className={`${setShowTag()} badge badge-sm badge-error text-white`}>
             NEW
           </div>
         </h2>

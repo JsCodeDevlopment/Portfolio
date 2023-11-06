@@ -4,7 +4,7 @@ export interface IRepos {
   html_url: string;
   description: string | null;
   homepage: string | undefined;
-  topics: any[];
-  created_at: Date
+  topics: string[];
+  created_at: string
   message?: "Not Found";
 }
