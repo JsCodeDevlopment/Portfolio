@@ -15,8 +15,8 @@ export function HomeContent() {
   return (
     <div className="flex flex-col gap-5 max-md:w-full max-md:items-center">
       <div className="flex flex-col">
-        <h1 className="text-3xl text-first">Jonatas Silva</h1>
-        <p className="text-base">Ceará - Brasil</p>
+        <h1 className="text-3xl text-first font-title">Jonatas Silva</h1>
+        <p className="text-sm font-extralight">Ceará - Brasil</p>
       </div>
       <div className="flex w-96 max-lg:w-full">
         <p className="text-xl">

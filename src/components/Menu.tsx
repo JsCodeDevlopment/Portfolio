@@ -13,8 +13,8 @@ export function Menu() {
         <div className="flex w-full gap-4 pb-1 border-b-[0.1px] border-white items-center justify-center max-md:flex-col max-md:gap-1">
           <img className="w-12 h-12 rounded-md max-md:w-7 max-md:h-7" src={Logo} alt="" />
           <div className="flex flex-col justify-center max-md:items-center">
-            <h1 className="text-2xl max-md:text-base">Jonatas Silva</h1>
-            <p className="text-md max-md:text-xs">Fullstack Developer</p>
+            <h1 className="text-2xl max-md:text-base font-title">Jonatas Silva</h1>
+            <p className="text-sm max-md:text-xs">Fullstack Developer</p>
           </div>
         </div>
         <div className="flex flex-col gap-2 max-lg:flex-row max-lg:w-full max-lg:h-full max-lg:items-center max-lg:justify-center max-lg:z-50">

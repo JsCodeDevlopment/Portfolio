@@ -11,21 +11,21 @@ export function NavgationBtn({ selectedOption, onOptionClick }: AboutPageProps) 
             type="button"
             name="front"
             onClick={() => onOptionClick('front')}
-            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'front' ? 'bg-white text-black' : 'hover:bg-background'}`} >
+            className={`px-5 py-1.5 text-xs max-lg:text-[0.6rem] font-medium rounded-lg ${selectedOption === 'front' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Front-end
           </button>
           <button
             type="button"
             name="back"
             onClick={() => onOptionClick('back')}
-            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'back' ? 'bg-white text-black' : 'hover:bg-background'}`} >
+            className={`px-5 py-1.5 text-xs max-lg:text-[0.6rem] font-medium rounded-lg ${selectedOption === 'back' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Back-end
           </button>
           <button
             type="button"
             name="other"
             onClick={() => onOptionClick('other')}
-            className={`px-5 py-1.5 text-xs font-medium rounded-lg ${selectedOption === 'other' ? 'bg-white text-black' : 'hover:bg-background'}`} >
+            className={`px-5 py-1.5 text-xs max-lg:text-[0.6rem] font-medium rounded-lg ${selectedOption === 'other' ? 'bg-white text-black' : 'hover:bg-background'}`} >
             Outros
           </button>
         </div>

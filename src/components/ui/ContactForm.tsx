@@ -1,6 +1,6 @@
 export function ContactForm() {
   return (
-    <form className="flex w-1/2 flex-col gap-3 max-lg:w-4/5 max-lg:justify-center max-md:w-full">
+    <form className="flex w-1/2 flex-col gap-3 max-lg:w-4/5 max-lg:justify-center max-md:w-full text-xs">
       <label htmlFor="name">Nome</label>
       <input
         id="name"

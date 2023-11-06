@@ -10,8 +10,8 @@ export default {
         thirt: "#181818",
       },
       fontFamily: {
-        poppins: "",
-        title: "",
+        poppins: "poppins",
+        title: "kanit",
       },
       backgroundImage: {
         "gradient-radial": "linear-gradient(214deg, #F2D058 18.99%, #E83752 69.44%)",

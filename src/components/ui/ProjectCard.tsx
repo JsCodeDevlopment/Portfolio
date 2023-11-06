@@ -14,11 +14,11 @@ export function ProjectCard({ name, html_url, description, homepage }: IRepos) {
         <img src={img} alt="Shoes" />
       </figure>
       <div className="card-body gap-5">
-        <h2 className="card-title">
+        <h2 className="card-title font-title font-normal">
           {name}
           <div className="badge badge-sm badge-error text-white">NEW</div>
         </h2>
-        <p>
+        <p className="font-extralight text-sm max-md:text-xs break-words">
           {description}
         </p>
         <div className="flex w-full items-center justify-between">
