@@ -37,12 +37,11 @@ export function ProjectCard({
     setShowTag();
   }, [])
   
-
   return (
-    <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5">
+    <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5 hover:scale-105">
       {homepage && (
         <figure>
-          <img className="" src={`${homepage}/preview.webp`} alt="" />
+          <img src={`${homepage}/preview.webp`} alt="" />
         </figure>
       )}
       <div className="card-body gap-5">
