@@ -1,6 +1,3 @@
-import js from "../../assets/images/javascript.svg";
-import react from "../../assets/images/react.svg";
-import sc from "../../assets/images/styledcomponents.svg";
 import github from "../../assets/images/github-icon.svg";
 import link from "../../assets/images/visitar.svg";
 import { Button } from "./Button";
@@ -8,12 +5,11 @@ import { IRepos } from "../../interfaces/IRepos";
 import { utcToZonedTime } from "date-fns-tz";
 import { differenceInDays, parseISO } from "date-fns";
 import { useEffect } from "react";
+import { MockTopcs } from "../data/MockTopcs";
 
-export function ProjectCard({
-  repo: { name, html_url, description, homepage, created_at },
-}: {
-  repo: IRepos;
-}) {
+export function ProjectCard({ repo: { name, html_url, description, homepage, created_at, topics } }: { repo: IRepos }) {
+  const { stackIcons } = MockTopcs();
+
   const setShowTag = () => {
     const timeZone = "America/Sao_Paulo";
     const dataRecebidaParsed = utcToZonedTime(
@@ -35,8 +31,8 @@ export function ProjectCard({
 
   useEffect(() => {
     setShowTag();
-  }, [])
-  
+  }, []);
+
   return (
     <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5 hover:scale-105">
       {homepage && (
@@ -47,8 +43,7 @@ export function ProjectCard({
       <div className="card-body gap-5">
         <h2 className="card-title font-title font-normal">
           {name.replace(/-/g, " ")}
-          <div
-            className={`${setShowTag()} badge badge-sm badge-error text-white`}>
+          <div className={`${setShowTag()} badge badge-sm badge-error text-white`}>
             NEW
           </div>
         </h2>
@@ -57,15 +52,13 @@ export function ProjectCard({
         </p>
         <div className="flex w-full items-center justify-between">
           <div className="flex items-center justify-start gap-3">
-            <div className="tooltip" data-tip="React">
-              <img src={react} width={20} height={20} alt="" />
+          {topics.map(topic => (
+          stackIcons[topic] ? (
+            <div key={topic} className="tooltip" data-tip={topic}>
+              <img src={stackIcons[topic]} width={20} height={20} alt={topic} />
             </div>
-            <div className="tooltip" data-tip="Javascript">
-              <img src={js} width={20} height={20} alt="" />
-            </div>
-            <div className="tooltip" data-tip="Styled Components">
-              <img src={sc} width={20} height={20} alt="" />
-            </div>
+          ) : null
+        ))}
           </div>
           <div className="flex justify-end">
             <div className="tooltip" data-tip="Visitar">
