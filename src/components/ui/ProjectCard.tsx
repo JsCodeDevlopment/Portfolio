@@ -1,4 +1,3 @@
-import img from "../../assets/images/temporary.png";
 import js from "../../assets/images/javascript.svg";
 import react from "../../assets/images/react.svg";
 import sc from "../../assets/images/styledcomponents.svg";
