@@ -12,23 +12,20 @@ export function ProjectCard({ repo: { name, html_url, description, homepage, cre
 
   const setShowTag = () => {
     const timeZone = "America/Sao_Paulo";
-    const dataRecebidaParsed = utcToZonedTime(
-      parseISO(created_at.toString()),
-      timeZone
-    );
-    const dataAtual = new Date();
-    const diferencaEmDias = differenceInDays(dataRecebidaParsed, dataAtual);
+    const parsedDate = utcToZonedTime(parseISO(created_at.toString()),timeZone);
+    const currentDate = new Date();
+    const daysDifference = differenceInDays(parsedDate, currentDate);
 
     let displayStyle;
 
-    if (diferencaEmDias > -30) {
+    if (daysDifference > -30) {
       displayStyle = "inline-flex";
     } else {
       displayStyle = "hidden";
     }
     return displayStyle;
   };
-
+  
   useEffect(() => {
     setShowTag();
   }, []);
@@ -54,7 +51,7 @@ export function ProjectCard({ repo: { name, html_url, description, homepage, cre
           <div className="flex items-center justify-start gap-3">
           {topics.map(topic => (
           stackIcons[topic] ? (
-            <div key={topic} className="tooltip" data-tip={topic}>
+            <div key={topic} className="tooltip" data-tip={topic.replace(/-/g, ' ').replace(/\b\w/g, match => match.toUpperCase())}>
               <img src={stackIcons[topic]} width={20} height={20} alt={topic} />
             </div>
           ) : null
