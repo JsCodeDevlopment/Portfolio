@@ -26,7 +26,8 @@ export function ContactForm() {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} id="contact-form" className="flex w-1/2 flex-col gap-3 max-lg:w-4/5 max-lg:justify-center max-md:w-full text-xs">
+    <form ref={form} onSubmit={sendEmail} id="contact-form" 
+      className="flex w-1/2 flex-col gap-3 max-lg:w-4/5 max-lg:justify-center max-md:w-full text-xs">
       <label htmlFor="name">Nome</label>
       <input
         id="name"
@@ -54,7 +55,7 @@ export function ContactForm() {
         className="textarea textarea-bordered w-full"
         name="message" required></textarea>
       <button
-        className="bg-gradient-to-r from-first to-second text-white font-bold py-2 px-4 rounded-md hover:bg-background"
+        className="bg-gradient-to-r transition-all from-first to-second text-white font-bold py-2 px-4 rounded-md hover:scale-105"
         type="submit">Enviar</button>
     </form>
   );

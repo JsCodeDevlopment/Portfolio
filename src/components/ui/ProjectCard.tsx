@@ -31,10 +31,10 @@ export function ProjectCard({ repo: { name, html_url, description, homepage, cre
   }, []);
 
   return (
-    <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5 hover:scale-105">
+    <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5">
       {homepage && (
         <figure>
-          <img src={`${homepage}/preview.webp`} alt="" />
+          <img className="transition-all hover:scale-110" src={`${homepage}/preview.webp`} alt="" />
         </figure>
       )}
       <div className="card-body gap-5">
