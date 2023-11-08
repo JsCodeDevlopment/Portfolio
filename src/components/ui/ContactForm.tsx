@@ -1,8 +1,11 @@
 import emailjs from "@emailjs/browser";
 import { publicKey, serviseId, templateId } from "../../servises/emailJs";
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 
 export function ContactForm() {
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [description, setDescription] = useState('')
   
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -12,6 +15,9 @@ export function ContactForm() {
     if (form.current) {
       emailjs.sendForm(serviseId, templateId, form.current, publicKey)
         .then((result) => {
+          setNome('')
+          setEmail('')
+          setDescription('')
           console.log(result.text);
         }, (error) => {
           console.log(error.text);
@@ -25,6 +31,8 @@ export function ContactForm() {
       <input
         id="name"
         name="user_name"
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
         placeholder="Jhon Doe"
         className="input input-bordered w-full"
         type="text" />
@@ -32,6 +40,8 @@ export function ContactForm() {
       <input
         id="email"
         name="user_email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         placeholder="jhondoe@email.com"
         className="input input-bordered w-full"
         type="email" required/>
@@ -39,6 +49,8 @@ export function ContactForm() {
       <textarea
         id="message"
         placeholder="Vamos trocar ideias?"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
         className="textarea textarea-bordered w-full"
         name="message" required></textarea>
       <button
