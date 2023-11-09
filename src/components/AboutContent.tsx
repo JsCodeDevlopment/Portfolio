@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Me from "../assets/images/aboutImg.png";
+import CV from '/Jonatas-Silva.pdf'
 import Download from "../assets/images/download.png";
 import { FrontStacks } from "./skillsComponents/Front";
 import { Button } from "./ui/Button";
@@ -44,7 +45,7 @@ export function AboutContent() {
         </div>
       </div>
       <div className="flex max-lg:justify-center max-xl:justify-center">
-        <Button title="Download C.V" logo={Download} size="large" endereco="" />
+        <Button title="Download C.V" logo={Download} size="large" endereco={CV}/>
       </div>
       <div className="flex flex-col items-center gap-5">
         <h1 className="text-3xl text-first font-title">Habilidades</h1>
