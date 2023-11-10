@@ -13,7 +13,6 @@ export function ResponsiveMenu ({ setMenuVisible }: IResponsiveMenuProps) {
 
   useEffect(() => {
    const handleOutsideClick = (e: MouseEvent) => {
-    alert('deu bom')
 
     if (!dropDownRef.current) {
       return
