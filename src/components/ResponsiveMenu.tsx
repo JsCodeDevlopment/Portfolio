@@ -1,14 +1,41 @@
 import { Link } from "react-router-dom";
 import { useMenuOptions } from "./data/MockMenu";
 import { IconAnimation } from "./IconAnimation";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 
-export function ResponsiveMenu () {
+interface IResponsiveMenuProps {
+  setMenuVisible: Dispatch<SetStateAction<boolean>>
+}
+
+export function ResponsiveMenu ({ setMenuVisible }: IResponsiveMenuProps) {
   const { menuOptions } = useMenuOptions();
+  const dropDownRef = useRef<HTMLLIElement>(null)
+
+  useEffect(() => {
+   const handleOutsideClick = (e: MouseEvent) => {
+    alert('deu bom')
+
+    if (!dropDownRef.current) {
+      return
+    }
+
+    if (e.target !== dropDownRef.current) {
+      setMenuVisible(false)
+    }
+  }
+
+  setTimeout(() => {
+    document.querySelector('body')?.addEventListener('click', handleOutsideClick)
+  }, 100);
+  
+  return () => document.querySelector('body')?.removeEventListener('click', handleOutsideClick)
+  }, [])
+  
 
   return (
     <div className="inline-flex flex-col items-center absolute bg-gradient-to-b from-black/90 to-black/40 rounded-md shadow-md top-[4.3rem] right-2 max-md:top-[3rem]">
       <ul className="flex p-2 flex-col gap-1 items-start w-48 h-70">
-        <li className="flex gap-2 py-1 px-2 w-full text-white font-semibold border-b border-white/20">
+        <li ref={dropDownRef} className="flex gap-2 py-1 px-2 w-full text-white font-semibold border-b border-white/20">
           Menu
         </li>
         {menuOptions.map((option) => (

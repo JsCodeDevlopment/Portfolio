@@ -8,16 +8,6 @@ import { useState } from "react";
 export function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
 
-  const handleClick = () => {
-    const view = document.querySelector('#viewPort')
-    
-    if (menuVisible) {
-      view?.addEventListener('click', () => {
-        setMenuVisible(false)
-        })
-    }
-  }
-
   return (
     <div className="hidden fixed items-center justify-between px-10 py-2 bg-gradient-to-b from-background to-black/60 shadow-md w-full z-50 max-lg:flex max-md:px-6">
       <div className="flex items-center gap-2">
@@ -28,15 +18,13 @@ export function Header() {
             alt="" />
         </Link>
       </div>
-      <div className="flex">
+      <div className="flex cursor-pointer" onClick={()=>setMenuVisible(!menuVisible)}>
         <img
           className="w-[44px] h-[44px] max-md:w-7 max-md:h-7"
           src={menuVisible ? CloseBtn : HbgBtn}
-          alt=""
-          onChange={handleClick} 
-          onClick={()=>setMenuVisible(!menuVisible)}/>
+          alt="" />
       </div>
-      {menuVisible ? <ResponsiveMenu /> : <></>}
+      {menuVisible && <ResponsiveMenu setMenuVisible={setMenuVisible}/>}
     </div>
   );
 }
