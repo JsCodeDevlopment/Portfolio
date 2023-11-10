@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useMenuOptions } from "./data/MockMenu";
 import { IconAnimation } from "./IconAnimation";
 
-export function ResponsiveMenu() {
+export function ResponsiveMenu () {
   const { menuOptions } = useMenuOptions();
 
   return (

@@ -1,12 +1,22 @@
 import Logo from "../assets/images/mini-logo.png";
 import HbgBtn from "../assets/images/menu.png";
 import CloseBtn from "../assets/images/close-menu.png";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ResponsiveMenu } from "./ResponsiveMenu";
+import { useState } from "react";
 
 export function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
+
+  const handleClick = () => {
+    const view = document.querySelector('#viewPort')
+    
+    if (menuVisible) {
+      view?.addEventListener('click', () => {
+        setMenuVisible(false)
+        })
+    }
+  }
 
   return (
     <div className="hidden fixed items-center justify-between px-10 py-2 bg-gradient-to-b from-background to-black/60 shadow-md w-full z-50 max-lg:flex max-md:px-6">
@@ -23,9 +33,10 @@ export function Header() {
           className="w-[44px] h-[44px] max-md:w-7 max-md:h-7"
           src={menuVisible ? CloseBtn : HbgBtn}
           alt=""
-          onClick={() => setMenuVisible(!menuVisible)} />
+          onChange={handleClick} 
+          onClick={()=>setMenuVisible(!menuVisible)}/>
       </div>
-      {menuVisible ? <ResponsiveMenu/> : <></>}
+      {menuVisible ? <ResponsiveMenu /> : <></>}
     </div>
   );
 }
