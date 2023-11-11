@@ -7,8 +7,6 @@ export function ContactForm() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-  const toasti = (msg: string) => toast(msg)
-
   const form = useRef<HTMLFormElement | null>(null);
 
   const sendEmail = (e: FormEvent) => {
@@ -20,10 +18,10 @@ export function ContactForm() {
           setNome("");
           setEmail("");
           setDescription("");
-          toasti(`${result.text}! Mensagem enviada com sucesso! ✌`)
+          toast.success(`${result.text}! Mensagem enviada com sucesso! ✌`, {autoClose: 1000 * 3})
         },
         (error) => {
-          toasti(`${error.text}! Infelizmente algo deu errado 🤦‍♂️`)
+          toast.error(`${error.text}! Infelizmente algo deu errado 🤦‍♂️`, {autoClose: 1000 * 3})
         }
       );
     }
@@ -62,7 +60,8 @@ export function ContactForm() {
           onChange={(e) => setDescription(e.target.value)}
           className="textarea textarea-bordered w-full"
           name="message"
-          required></textarea>
+          required>
+        </textarea>
         <button
           className="bg-gradient-to-r transition-all from-first to-second text-white font-bold py-2 px-4 rounded-md hover:scale-105"
           type="submit">
