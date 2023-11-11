@@ -5,7 +5,7 @@ export function NavgationBtn({ selectedOption, onOptionClick }: AboutPageProps) 
     <div className="z-50 w-full">
       <div className="w-full">
         <div
-          className="grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-black rounded-lg"
+          className="grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-white/5 rounded-lg shadow-lg"
           role="group" >
           <button
             type="button"
