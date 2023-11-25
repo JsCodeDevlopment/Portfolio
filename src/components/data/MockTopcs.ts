@@ -6,12 +6,14 @@ import react from "../../assets/images/react.svg";
 import lottie from "../../assets/images/lottie.png";
 import daisy from "../../assets/images/daisyUi.png";
 import fastify from "../../assets/images/fastify.svg";
+import express from "../../assets/images/express.svg";
 import prisma from "../../assets/images/prisma.svg";
 import tailwind from "../../assets/images/tailwind.svg";
 import styled from "../../assets/images/styledcomponents.svg";
 import nodejs from "../../assets/images/node.svg";
 import router from "../../assets/images/routerDom.png";
 import postgre from "../../assets/images/postgres.svg";
+import docker from "../../assets/images/docker.svg";
 import { TopicImages } from "../../interfaces/ITopcImages";
 
 export function MockTopcs() {
@@ -24,12 +26,14 @@ export function MockTopcs() {
     "lottie-animation": lottie,
     "daisy-ui": daisy,
     fastify: fastify,
+    express: express,
     prisma: prisma,
     tailwind: tailwind,
     "styled-components": styled,
     nodejs: nodejs,
     "router-dom-v6": router,
     postgresql: postgre,
+    docker: docker,
   };
   return { stackIcons };
 }
