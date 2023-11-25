@@ -14,6 +14,7 @@ import nodejs from "../../assets/images/node.svg";
 import router from "../../assets/images/routerDom.png";
 import postgre from "../../assets/images/postgres.svg";
 import docker from "../../assets/images/docker.svg";
+import sql from "../../assets/images/sql.svg";
 import { TopicImages } from "../../interfaces/ITopcImages";
 
 export function MockTopcs() {
@@ -34,6 +35,7 @@ export function MockTopcs() {
     "router-dom-v6": router,
     postgresql: postgre,
     docker: docker,
+    sql: sql,
   };
   return { stackIcons };
 }
