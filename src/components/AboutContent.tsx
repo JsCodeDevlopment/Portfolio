@@ -49,7 +49,7 @@ export function AboutContent() {
       </div>
       <div className="flex flex-col items-center gap-5">
         <h1 className="text-3xl text-first font-title">Habilidades</h1>
-        <div className="flex flex-col gap-2 h-48 max-lg:h-64 max-lg:mb-3 max-md:h-[500px]">
+        <div className="flex flex-col gap-2 h-48 max-lg:h-64 max-lg:mb-3 max-md:h-[592px]">
           <NavgationBtn selectedOption={selectedOption} onOptionClick={handleOptionClick} />
           {selectedOption === 'front' ? <FrontStacks/> : selectedOption === 'back' ? <BackStacks/> : <OthersStacks/>}
         </div>
