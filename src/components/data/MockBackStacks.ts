@@ -7,6 +7,9 @@ import Prisma from "../../assets/images/prisma.svg";
 import EJS from "../../assets/images/ejs.svg";
 import Express from "../../assets/images/express.svg";
 import Fastify from "../../assets/images/fastify.svg";
+import Docker from "../../assets/images/docker.svg";
+import MongoDB from "../../assets/images/mongodb.svg";
+import Mongoose from "../../assets/images/mongoose.svg";
 import { IFrontStacks } from "../../interfaces/IFrontStacks";
 
 export function useBackStacks() {
@@ -46,6 +49,18 @@ export function useBackStacks() {
     {
       title: "Fastify",
       logo: Fastify,
+    },
+    {
+      title: "MongoDB",
+      logo: MongoDB,
+    },
+    {
+      title: "Docker",
+      logo: Docker,
+    },
+    {
+      title: "Mongoose",
+      logo: Mongoose,
     },
   ];
   return { frontStacks };
