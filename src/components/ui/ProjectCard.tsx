@@ -29,6 +29,7 @@ export function ProjectCard({ repo: { name, html_url, description, homepage, cre
   useEffect(() => {
     setShowTag();
   }, []);
+  console.log(topics);
 
   return (
     <div className="card w-full bg-white/5 shadow-xl hover:bg-gradient-to-b hover:from-background/80 hover:to-background/5">
@@ -38,7 +39,7 @@ export function ProjectCard({ repo: { name, html_url, description, homepage, cre
         </figure>
       )}
       <div className="card-body gap-5">
-        <h2 className="card-title font-title font-normal">
+        <h2 className="card-title font-title font-normal capitalize">
           {name.replace(/-/g, " ")}
           <div className={`${setShowTag()} badge badge-sm badge-error text-white`}>
             NEW

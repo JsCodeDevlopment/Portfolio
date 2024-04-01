@@ -17,6 +17,10 @@ import docker from "../../assets/images/docker.svg";
 import sql from "../../assets/images/sql.svg";
 import mongoDb from "../../assets/images/mongodb.svg";
 import mongoose from "../../assets/images/mongoose.svg";
+import nextjs from "../../assets/images/next.svg";
+import stripe from "../../assets/images/stripe.svg";
+import shadcnUi from "../../assets/images/shadcn.svg";
+import axios from "../../assets/images/axios.svg";
 import { TopicImages } from "../../interfaces/ITopcImages";
 
 export function MockTopcs() {
@@ -39,7 +43,11 @@ export function MockTopcs() {
     docker: docker,
     sql: sql,
     mongodb: mongoDb,
-    mongoose: mongoose
+    mongoose: mongoose,
+    nextjs: nextjs,
+    axios: axios,
+    stripe: stripe,
+    "shadcn-ui": shadcnUi,
   };
   return { stackIcons };
 }

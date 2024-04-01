@@ -10,6 +10,7 @@ import Fastify from "../../assets/images/fastify.svg";
 import Docker from "../../assets/images/docker.svg";
 import MongoDB from "../../assets/images/mongodb.svg";
 import Mongoose from "../../assets/images/mongoose.svg";
+import Axios from "../../assets/images/axios.svg";
 import { IFrontStacks } from "../../interfaces/IFrontStacks";
 
 export function useBackStacks() {
@@ -61,6 +62,10 @@ export function useBackStacks() {
     {
       title: "Mongoose",
       logo: Mongoose,
+    },
+    {
+      title: "Axios",
+      logo: Axios,
     },
   ];
   return { frontStacks };

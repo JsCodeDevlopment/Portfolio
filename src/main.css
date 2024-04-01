@@ -2,28 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  width: 7px;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #141517;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #e83752;
+    border-radius: 6px;
+  }
+  
+  * {
+    color: white;
+    font-family: "poppins";
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    color: white;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background-color: #141517;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #E83752;
-  border-radius: 6px;
-}
-
-* {
-  color: white;
-  font-family: 'poppins';
-}
-
-html {
-  scroll-behavior: smooth;
-  color: white;
-}
 @layer components {
   .top-left-blur {
     @apply before:w-[50rem] before:h-[50rem] before:blur-[135px] before:opacity-50 before:bg-gradient-radial before:absolute before:top-0 before:left-0 before:block before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full;
@@ -35,7 +38,7 @@ html {
 }
 
 @layer components {
-    .icon-size{
-        @apply h-[26px] w-[26px]
-    }
+  .icon-size {
+    @apply h-[26px] w-[26px];
+  }
 }

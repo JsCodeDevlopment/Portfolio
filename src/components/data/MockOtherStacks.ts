@@ -3,6 +3,7 @@ import Figma from "../../assets/images/figma.svg";
 import Git from "../../assets/images/git.svg";
 import Github from "../../assets/images/github.svg";
 import Vercel from "../../assets/images/vercel.svg";
+import Stripe from "../../assets/images/stripe.svg";
 import { IFrontStacks } from "../../interfaces/IFrontStacks";
 
 export function useOtherStacks() {
@@ -26,6 +27,10 @@ export function useOtherStacks() {
     {
       title: "Vercel",
       logo: Vercel,
+    },
+    {
+      title: "Stripe",
+      logo: Stripe,
     },
   ];
   return { frontStacks };

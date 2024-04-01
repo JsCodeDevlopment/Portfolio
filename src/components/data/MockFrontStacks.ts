@@ -7,6 +7,8 @@ import Lottie from "../../assets/images/lottie.png";
 import Tailwind from "../../assets/images/tailwind.svg";
 import Styled from "../../assets/images/styledcomponents.svg";
 import Vite from "../../assets/images/vite.svg";
+import Next from "../../assets/images/next.svg";
+import ShadcnUi from "../../assets/images/shadcn.svg";
 import { IFrontStacks } from "../../interfaces/IFrontStacks";
 
 export function useFrontStacks() {
@@ -46,6 +48,14 @@ export function useFrontStacks() {
     {
       title: "Vite",
       logo: Vite,
+    },
+    {
+      title: "Shadcn-ui",
+      logo: ShadcnUi,
+    },
+    {
+      title: "NextJs",
+      logo: Next,
     },
   ];
   return { frontStacks };
