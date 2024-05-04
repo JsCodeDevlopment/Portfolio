@@ -8,8 +8,8 @@ export function Menu() {
   const { menuOptions } = useMenuOptions()
 
   return (
-    <div className=" flex rounded-xl w-60 h-80 p-[1px] z-10 bg-gradient-to-b from-first to-first/0 max-lg:w-1/2 max-lg:h-40 max-lg:absolute max-lg:bottom-1 max-sm:w-2/3 max-[424px]:w-[300px] max-lg:hidden">
-      <div className="flex flex-col w-60 h-80 rounded-xl py-7 gap-3 px-3 bg-thirt max-lg:w-full max-lg:h-full max-lg:items-center max-lg:justify-center max-lg:p-2">
+    <div className=" flex rounded-xl w-60 h-[22rem] p-[1px] z-10 bg-gradient-to-b from-first to-first/0 max-lg:w-1/2 max-lg:h-40 max-lg:absolute max-lg:bottom-1 max-sm:w-2/3 max-[424px]:w-[300px] max-lg:hidden">
+      <div className="flex flex-col w-60 h-[22rem] rounded-xl py-7 gap-3 px-3 bg-thirt max-lg:w-full max-lg:h-full max-lg:items-center max-lg:justify-center max-lg:p-2">
         <div className="flex w-full gap-4 pb-1 border-b-[0.1px] border-white items-center justify-center max-md:flex-col max-md:gap-1">
           <img className="w-12 h-12 rounded-md max-md:w-7 max-md:h-7" src={Logo} alt="" />
           <div className="flex flex-col justify-center max-md:items-center">

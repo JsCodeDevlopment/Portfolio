@@ -2,6 +2,7 @@ import Home from "../../assets/static/home.json";
 import About from "../../assets/static/about.json";
 import Projects from "../../assets/static/project.json";
 import Contact from "../../assets/static/contact.json";
+import Experience from "../../assets/static/experiences.json";
 import { IMenuOptions } from "../../interfaces/IMenuoptions";
 import { useRef } from "react";
 import { LottieRefCurrentProps } from "lottie-react";
@@ -9,6 +10,7 @@ import { LottieRefCurrentProps } from "lottie-react";
 export function useMenuOptions() {
   const homeRef = useRef<LottieRefCurrentProps>(null);
   const aboutRef = useRef<LottieRefCurrentProps>(null);
+  const expRef = useRef<LottieRefCurrentProps>(null);
   const projectsRef = useRef<LottieRefCurrentProps>(null);
   const contactRef = useRef<LottieRefCurrentProps>(null);
 
@@ -25,6 +27,13 @@ export function useMenuOptions() {
       title: "Sobre",
       href: "/about",
       iconRef: aboutRef,
+      speed: 1,
+    },
+    {
+      icon: Experience,
+      title: "Experiências",
+      href: "/experiences",
+      iconRef: expRef,
       speed: 1,
     },
     {
