@@ -45,7 +45,7 @@ export function useExperiences(): useExperiences {
       model: "Remoto",
       period: "Tempo integral",
       description:
-        "A Next é uma startup que estoou ajudando a erguer com amigos e lá atuo como desenvolvedor fullstack contribuindo com a contrução de sites, aplicações e sistemas.",
+        "A Next é uma startup que estou ajudando a erguer com amigos e lá atuo como desenvolvedor fullstack contribuindo com a contrução de sites, aplicações e sistemas.",
     },
     {
       id: 3,
