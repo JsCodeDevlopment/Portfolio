@@ -18,7 +18,7 @@ export function ContactContent() {
         </div>
         <div className="flex flex-wrap gap-10 max-lg:gap-3 max-lg:items-center max-lg:justify-center max-md:flex-col max-md:justify-center">
           <h1 className="text-lg font-semibold">Minhas Redes Sociais</h1>
-          <div className="flex max-lg:items-center max-lg:justify-center max-sm:flex-wrap max-sm:w-10">
+          <div className="flex max-lg:items-center max-lg:justify-center max-sm:w-10">
             <Button
               title="Linkedin"
               logo={Linkedin}
