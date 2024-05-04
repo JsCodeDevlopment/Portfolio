@@ -27,7 +27,7 @@ export function useExperiences(): useExperiences {
   const profExp: profExp[] = [
     {
       id: 1,
-      title: "Desenvolvedor Web",
+      title: "Desenvolvedor Web Freelancer",
       company: "VintePila",
       start: "fev de 2023",
       end: "set de 2023",
