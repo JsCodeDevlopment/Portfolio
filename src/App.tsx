@@ -5,6 +5,7 @@ import { AboutContent } from "./components/AboutContent";
 import { ProjectsContent } from "./components/ProjectsContent";
 import { ContactContent } from "./components/ContactContent";
 import { HomeContent } from "./components/HomeContent";
+import { ExperiencesContent } from "./components/ExperiencesContent";
 import { Header } from "./components/Header";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +28,7 @@ export const App = () => {
             <Routes>
               <Route path="/" element={<HomeContent />} />
               <Route path="/about" element={<AboutContent />} />
+              <Route path="/experiences" element={<ExperiencesContent />} />
               <Route path="/projects" element={<ProjectsContent />} />
               <Route path="/contact" element={<ContactContent />} />
             </Routes>
